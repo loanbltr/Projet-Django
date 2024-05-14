@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{dieu.nom}}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}"/>
+</head>
+<body class="afficheGod">
+{% include 'main_nav.html' %}
+
+    <h1 class="mainTitleIndex"> Descriptif de {{ dieu.nom }}</h1>
+    <p class="infoBasique"> {{dieu.nom}} est le dieu des {{dieu.association}}. Voici son arme: {{dieu.arme}}</p>
+
+<article>
+    <p class="descCivilisation"> {{dieu.histoire}}</p>
+</article>
+
+{% include 'main_footer.html' %}
+</body>
+</html>

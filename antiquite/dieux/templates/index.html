@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Panthéon</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}"/>
+
+</head>
+<body class="index">
+{% include 'main_nav.html' %}
+<h1 class="mainTitleIndex"> Vos Dieux, vos Civilisations, vos Univers...</h1>
+<a href="/antiquite/ajout/" class="addDieu"> Ajouter un dieu </a>
+<a href="/antiquite/civilisationajout/" class="addCivilisation"> Ajouter une civilisation </a>
+<ol>
+  {% for d in liste %}
+    <li>{{d}} <a href="/antiquite/affiche/{{d.id}}/">Affiche</a>  |  <a href="/antiquite/update/{{d.id}}/">Update</a>  |  <a href="/antiquite/delete/{{d.id}}/">Delete</a> </li>
+  {% endfor %}
+</ol>
+{% include 'main_footer.html' %}
+</body>
+</html>

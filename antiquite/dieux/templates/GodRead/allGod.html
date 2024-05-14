@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Vos Dieux</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}"/>
+</head>
+<body class="allGod">
+{% include 'main_nav.html' %}
+
+<h1 class="mainTitleIndex"> Affichage et gestion des dieux </h1>
+<a class= "ajoutGodA" href="/antiquite/ajout/"> Ajouter un dieu </a>
+<article>
+    {% for d in liste %}
+        <li class="liste"> {{d}} <a class="edit" href="/antiquite/affiche/{{d.id}}/">Afficher les informations</a>  |  <a class="edit" href="/antiquite/update/{{d.id}}/">Mettre à jour</a>  |  <a class="edit" href="/antiquite/delete/{{d.id}}/">Supprimer</a> </li>
+    {% endfor %}
+</article>
+
+{% include 'main_footer.html' %}
+</body>
+</html>

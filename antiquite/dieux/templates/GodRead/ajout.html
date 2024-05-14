@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un dieu</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}"/>
+</head>
+<body class="ajoutGod">
+{% include 'main_nav.html' %}
+
+    <h1 class="mainTitleIndex">Saisie d'un nouveau Dieu</h1>
+    {% if id is not None %}
+        <form method="post" action="/antiquite/updatetraitement/{{id}}/"/>
+    {% else %}
+        <form method="post" action="/antiquite/traitement/"/>
+    {% endif %}
+    {% csrf_token %}
+    {{form.as_ul}}
+    <input type="submit" value="Envoyez les informations"/>
+{% include 'main_footer.html' %}
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Civilisation {{civilisation.nom}}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}"/>
+</head>
+<body class="afficheCivilisation">
+{% include 'main_nav.html' %}
+
+    <h1 class="mainTitleIndex"> Descriptif de la civilisation {{ civilisation.nom }} : </h1>
+    <p class="infoBasiqueC"> Les {{ civilisation.nom }} étaient une civilisation priant certains dieux.</p>
+<article>
+<p class="descCivilisation"> {{civilisation.desc}} </p>
+    </article>
+
+{% include 'main_footer.html' %}
+</body>
+</html>
